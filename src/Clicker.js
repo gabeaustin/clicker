@@ -20,7 +20,10 @@ class Clicker extends Component {
         <h1>Number is: {this.state.num}</h1>
 
         {this.state.num === 7 ? (
-          <h2>YOU WIN!</h2>
+          <div>
+            <h2>YOU WIN!</h2> <br />{" "}
+            <button onClick={this.genRandom}>Play Again</button>
+          </div>
         ) : (
           <button onClick={this.genRandom}>Random Number</button>
         )}
