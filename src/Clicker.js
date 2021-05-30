@@ -6,19 +6,24 @@ class Clicker extends Component {
     this.state = { num: 1 };
     this.genRandom = this.genRandom.bind(this);
   }
+
   genRandom() {
     // pick random number 1-10
     let rand = Math.floor(Math.random() * 10) + 1;
     // updated state with new random number
-    this.setState = ({ num: rand });
-
+    this.setState({ num: rand });
   }
 
   render() {
     return (
       <div>
         <h1>Number is: {this.state.num}</h1>
-        <button onClick={this.genRandom}>Random Number</button>
+
+        {this.state.num === 7 ? (
+          <h2>YOU WIN!</h2>
+        ) : (
+          <button onClick={this.genRandom}>Random Number</button>
+        )}
       </div>
     );
   }
